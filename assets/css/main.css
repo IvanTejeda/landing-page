@@ -3872,38 +3872,57 @@ input, select, textarea {
 
 /* Intro */
 
-	#intro {
-		background-attachment: fixed;
-		background-image: url("images/intro.svg");
-		background-position: top right;
-		background-repeat: no-repeat;
-		background-size: 100% 100%;
-	}
+#intro {
+    background-attachment: fixed;
+    background-image: url("images/intro.svg");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
 
-		#intro p {
-			font-size: 1.25em;
-		}
+#intro p {
+    font-size: 1.25em;
+}
 
-			@media screen and (max-width: 980px) {
+@media screen and (max-width: 980px) {
+    #intro p br {
+        display: none;
+    }
+}
 
-				#intro p br {
-					display: none;
-				}
+@media screen and (max-width: 736px) {
+    #intro p {
+        font-size: 1em;
+    }
+}
 
-			}
+@media screen and (max-width: 1280px) {
+    #intro {
+        background-attachment: scroll;
+    }
+}
 
-			@media screen and (max-width: 736px) {
+/* Add styles for intro content */
+.intro-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start of the container */
+    gap: 20px; /* Add space between text and image */
+}
 
-				#intro p {
-					font-size: 1em;
-				}
+.intro-content .text {
+    flex: 1;
+}
 
-			}
+.intro-content .image {
+    flex: 1;
+    text-align: right;
+    padding-left: 200px; /* Increase padding to move image further right */
+    margin-left: auto; /* Ensure image container is pushed to the right */
+}
 
-		@media screen and (max-width: 1280px) {
-
-			#intro {
-				background-attachment: scroll;
-			}
-
-		}
+.intro-content .image img {
+    max-width: 50%; /* Set a maximum width */
+    height: auto;
+    border-radius: 10px; /* Optional: Add some styling to the image */
+}
